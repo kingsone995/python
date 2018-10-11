@@ -10,7 +10,7 @@ y = np.sin(x)
 plt.rcParams['font.sans-serif']=['SimHei'] #加上这一句就能在图表中显示中文
 plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
 plt.subplot(1,2,1)
-plt.title(r'$f(x)=sin(x)$') #注意：在前面加一个u
+plt.title(r'$f(x)=sin(x)$') 
 plt.plot(x, y)
 #plt.show()
 
@@ -18,7 +18,6 @@ x1 = [t*0.375*np.pi for t in x]
 y1 = np.sin(x1)
 plt.subplot(1,2,2)
 # plt.title(u"测试2") #注意：在前面加一个u
-plt.title(r'$f(x)=sin(\omega x), \omega = \frac{3}{8} \pi$') #注意：在前面加一个u
-
+plt.title(r'$f(x)=sin(\omega x), \omega = \frac{3}{8} \pi$') 
 plt.plot(x1, y1)
 plt.show()
