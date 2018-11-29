@@ -1,5 +1,6 @@
-import sys
-from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication
+from Histgram import *
+import sys 
+from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication, QDialog
 from PyQt5.QtGui import QIcon
  
  
@@ -15,31 +16,51 @@ class Example(QMainWindow):
          
         textEdit = QTextEdit()
         self.setCentralWidget(textEdit)
- 
+
+    #各个子菜单
+        #file
         exitAction = QAction(QIcon(sys.path[0]+'/exit24.png'), 'Exit', self)
         exitAction.setShortcut('Ctrl+Q')
         exitAction.setStatusTip('Exit application')
         exitAction.triggered.connect(self.close)
+
+    #base info
+        HistAction = QAction(QIcon(sys.path[0]+'/Hist.png'), 'Hist', self)
+        HistAction.setShortcut('Ctrl+H')
+        HistAction.setStatusTip('Image Histgram')
+        HistAction.triggered.connect(self.Histgram)
  
         self.statusBar()
  
         menubar = self.menuBar()
         menubar.setNativeMenuBar(False) #MAC OS 需要特别增加这个语句
         fileMenu = menubar.addMenu('&File')
-        
         fileMenu.addAction(exitAction)
- 
+
+        BaseInfoMenu = menubar.addMenu('&Base Info')
+        BaseInfoMenu.addAction(HistAction)
+
         toolbar = self.addToolBar('Exit')
         toolbar.addAction(exitAction)
          
         self.setGeometry(200, 200, 900, 600)
         self.setWindowTitle('Main window')   
-        self.show()
-         
+    def Histgram(self): 
+        #下面的self必须要加上
+        self.child=childWindow()
+        self.child.show()
+
+class childWindow(QDialog):
+    def __init__(self):
+        QDialog.__init__(self)
+        self.child = HistgramUI()
+        self.child.setupUi(self)
          
 if __name__ == '__main__':
      
     app = QApplication(sys.argv)
+ 
     ex = Example()
+    ex.show()
     app.exec_()
     #sys.exit(app.exec_())

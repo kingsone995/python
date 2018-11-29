@@ -20,19 +20,29 @@ class Example(QMainWindow):
         exitAction.setShortcut('Ctrl+Q')
         exitAction.setStatusTip('Exit application')
         exitAction.triggered.connect(self.close)
+
+        openAction = QAction(QIcon(sys.path[0]+'/open.png'), 'Open', self)
+        openAction.setShortcut('Ctrl+O')
+        openAction.setStatusTip('Open a File')
+      #  openAction.triggered.connect(self.close)
+
  
         self.statusBar()
  
         menubar = self.menuBar()
         menubar.setNativeMenuBar(False) #MAC OS 需要特别增加这个语句
         fileMenu = menubar.addMenu('&File')
+        baseMenu = menubar.addMenu('&Base Info')
         
+        #
+        fileMenu.addAction(openAction)
         fileMenu.addAction(exitAction)
+        
  
         toolbar = self.addToolBar('Exit')
         toolbar.addAction(exitAction)
          
-        self.setGeometry(200, 200, 900, 600)
+        self.setGeometry(300, 300, 650, 250)
         self.setWindowTitle('Main window')   
         self.show()
          
@@ -41,5 +51,4 @@ if __name__ == '__main__':
      
     app = QApplication(sys.argv)
     ex = Example()
-    app.exec_()
-    #sys.exit(app.exec_())
+    sys.exit(app.exec_())
