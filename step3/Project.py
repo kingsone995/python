@@ -1,4 +1,4 @@
-from Histgram import *
+#from Histgram import *
 from hist import *
 import sys 
 #from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication, QDialog
@@ -31,7 +31,7 @@ class Example(QMainWindow):
         HistAction = QAction(QIcon(sys.path[0]+'/Hist.png'), 'Hist', self)
         HistAction.setShortcut('Ctrl+H')
         HistAction.setStatusTip('Image Histgram')
-        HistAction.triggered.connect(self.Histgram)
+        HistAction.triggered.connect(self.hist)
  
         self.statusBar()
  
@@ -48,7 +48,7 @@ class Example(QMainWindow):
          
         self.setGeometry(200, 200, 900, 600)
         self.setWindowTitle('Main window')   
-    def Histgram(self): 
+    def hist(self): 
         #下面的self必须要加上
         self.child=childWindow()
         self.child.show()
@@ -56,8 +56,8 @@ class Example(QMainWindow):
 class childWindow(QDialog):
     def __init__(self):
         QDialog.__init__(self)
-      #  self.child = HistgramUI()
-        self.child = UI_HistDlg()
+        #self.child = HistgramUI()
+        self.child = HistDlg()
         self.child.setupUi(self)
        # Form.show()
          
