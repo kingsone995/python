@@ -56,8 +56,8 @@ class Example(QMainWindow):
 class childWindow(QDialog):
     def __init__(self):
         QDialog.__init__(self)
-        self.child = HistgramUI()
-      #  self.child = UI_Hist()
+      #  self.child = HistgramUI()
+        self.child = UI_HistDlg()
         self.child.setupUi(self)
        # Form.show()
          

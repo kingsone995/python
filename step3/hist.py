@@ -9,10 +9,10 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_HistDlg(object):
-    def setupUi(self, HistDlg):
-        HistDlg.setObjectName("HistDlg")
-        HistDlg.resize(400, 300)
-        self.buttonBox = QtWidgets.QDialogButtonBox(HistDlg)
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Ui_HistDlg")
+        Dialog.resize(400, 300)
+'''        self.buttonBox = QtWidgets.QDialogButtonBox(HistDlg)
         self.buttonBox.setGeometry(QtCore.QRect(290, 20, 81, 241))
         self.buttonBox.setOrientation(QtCore.Qt.Vertical)
         self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
@@ -27,3 +27,4 @@ class Ui_HistDlg(object):
         _translate = QtCore.QCoreApplication.translate
         HistDlg.setWindowTitle(_translate("HistDlg", "Dialog"))
 
+'''
