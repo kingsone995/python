@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'hist.ui'
+# Form implementation generated from reading ui file 'histdlg.ui'
 #
 # Created by: PyQt5 UI code generator 5.11.3
 #
@@ -8,27 +8,22 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-class Ui_Hist(object):
-    def setupUi(self, Hist):
-        Hist.setObjectName("Hist")
-        Hist.resize(400, 300)
-        self.pushButton = QtWidgets.QPushButton(Hist)
-        self.pushButton.setGeometry(QtCore.QRect(230, 70, 113, 32))
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(Hist)
-        self.pushButton_2.setGeometry(QtCore.QRect(230, 140, 113, 32))
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_3 = QtWidgets.QPushButton(Hist)
-        self.pushButton_3.setGeometry(QtCore.QRect(230, 220, 113, 32))
-        self.pushButton_3.setObjectName("pushButton_3")
+class Ui_HistDlg(object):
+    def setupUi(self, HistDlg):
+        HistDlg.setObjectName("HistDlg")
+        HistDlg.resize(400, 300)
+        self.buttonBox = QtWidgets.QDialogButtonBox(HistDlg)
+        self.buttonBox.setGeometry(QtCore.QRect(290, 20, 81, 241))
+        self.buttonBox.setOrientation(QtCore.Qt.Vertical)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName("buttonBox")
 
-        self.retranslateUi(Hist)
-        QtCore.QMetaObject.connectSlotsByName(Hist)
+        self.retranslateUi(HistDlg)
+        self.buttonBox.accepted.connect(HistDlg.accept)
+        self.buttonBox.rejected.connect(HistDlg.reject)
+        QtCore.QMetaObject.connectSlotsByName(HistDlg)
 
-    def retranslateUi(self, Hist):
+    def retranslateUi(self, HistDlg):
         _translate = QtCore.QCoreApplication.translate
-        Hist.setWindowTitle(_translate("Hist", "Form"))
-        self.pushButton.setText(_translate("Hist", "PushButton"))
-        self.pushButton_2.setText(_translate("Hist", "OK"))
-        self.pushButton_3.setText(_translate("Hist", "Cancel"))
+        HistDlg.setWindowTitle(_translate("HistDlg", "Dialog"))
 

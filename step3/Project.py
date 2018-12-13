@@ -1,6 +1,9 @@
 from Histgram import *
+from hist import *
 import sys 
-from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication, QDialog
+#from PyQt5.QtWidgets import QMainWindow, QTextEdit, QAction, QApplication, QDialog
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon
  
  
@@ -54,12 +57,16 @@ class childWindow(QDialog):
     def __init__(self):
         QDialog.__init__(self)
         self.child = HistgramUI()
+      #  self.child = UI_Hist()
         self.child.setupUi(self)
+       # Form.show()
          
 if __name__ == '__main__':
      
     app = QApplication(sys.argv)
  
+    #widget = QWidget(None)
+    #Ui_Hist().setupUi(widget)
     ex = Example()
     ex.show()
     app.exec_()
