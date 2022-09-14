@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/Users/wangyigang/Documents/kingsone/github/python/mynew.ui'
+# Form implementation generated from reading ui file '/Users/wangyigang/Documents/kingsone/github/python/pyqtwindow/mynew.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -23,6 +23,9 @@ class Ui_MainWindow(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(430, 340, 112, 32))
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setGeometry(QtCore.QRect(390, 80, 112, 32))
+        self.pushButton_3.setObjectName("pushButton_3")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
@@ -38,5 +41,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "PushButton"))
-        self.pushButton_2.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton.setText(_translate("MainWindow", "编辑"))
+        self.pushButton_2.setText(_translate("MainWindow", "关闭"))
+        self.pushButton_3.setText(_translate("MainWindow", "打开"))
